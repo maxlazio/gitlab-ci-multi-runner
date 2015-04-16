@@ -16,7 +16,7 @@
 
 1. Setup the runner
 	```bash
-	$ gitlab-ci-multi-runner-linux setup
+	$ gitlab-ci-multi-runner setup
 	Please enter the gitlab-ci coordinator URL (e.g. http://gitlab-ci.org:3000/ )
 	https://ci.gitlab.org/
 	Please enter the gitlab-ci token for this runner
@@ -31,20 +31,18 @@
 	INFO[0037] Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
 	```
 
-1. Install runner as service and start it
+1. Run the service
 	```bash
-	$ gitlab-ci-multi-runner install
-	$ gitlab-ci-multi-runner start
+	$ gitlab-ci-multi-runner run
 	```
 
-1. Voila! Runner is installed and will be run after system reboot.
+1. Voila! Runner has been started and will monitor for builds.
+
+*NOTE* At this moment it is not possible to install the runner as a service, contributions are welcome. This means that you will have to start the runner manually after reboot.
 
 #### Update
 
-1. Stop service (you need elevated command prompt as before):
-	```bash
-	gitlab-ci-multi-runner stop
-	```
+1. Make sure that the runner is stopped.
 
 1. Download binary for your system from https://github.com/ayufan/gitlab-ci-multi-runner/releases and replace runner's executable:
 	```bash
@@ -56,7 +54,7 @@
 	chmod +x /usr/local/bin/gitlab-ci-multi-runner
 	```
 
-1. Start service:
+1. Run the service:
 	```bash
-	gitlab-ci-multi-runner start
+	gitlab-ci-multi-runner run
 	```
