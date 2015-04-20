@@ -17,21 +17,29 @@
 1. Setup the runner
 	```bash
 	$ gitlab-ci-multi-runner setup
-	Please enter the gitlab-ci coordinator URL (e.g. http://gitlab-ci.org:3000/ )
-	https://ci.gitlab.org/
-	Please enter the gitlab-ci token for this runner
-	xxx
-	Please enter the gitlab-ci description for this runner
-	my-runner
-	INFO[0034] fcf5c619 Registering runner... succeeded
-	Please enter the executor: shell, docker, docker-ssh, ssh?
-	docker
-	Please enter the Docker image (eg. ruby:2.1):
-	ruby:2.1
-	INFO[0037] Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
 	```
 
-1. Run the service
+	Provide the answers to questions asked by the setup screen:
+
+  ```
+  Please enter the gitlab-ci coordinator URL (e.g. http://gitlab-ci.org:3000/ )
+  https://ci.gitlab.org/
+
+  Please enter the gitlab-ci token for this runner
+  xxx
+
+  Please enter the gitlab-ci description for this runner
+  my-runner
+  INFO[0034] fcf5c619 Registering runner... succeeded
+
+  Please enter the executor: shell, docker, docker-ssh, ssh?
+  shell
+
+  INFO[0037] Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded!
+  ```
+
+
+1. Start the runner
 	```bash
 	$ gitlab-ci-multi-runner run
 	```
@@ -40,7 +48,7 @@
 
 *NOTE* At this moment it is not possible to install the runner as a service, contributions are welcome. This means that you will have to start the runner manually after reboot.
 
-#### Update
+#### Updating
 
 1. Make sure that the runner is stopped.
 
